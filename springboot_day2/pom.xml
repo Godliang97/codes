@@ -32,6 +32,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--这个依赖可以根据@ConfigurationProperties构建注入元数据-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <!--代表这个依赖不会被传递-->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
