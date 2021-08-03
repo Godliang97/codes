@@ -1,0 +1,17 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /springboot_day3  #指定应用名称
+
+#整个mybatis相关配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bootssm?characterEncoding=UTF-8  #mysql5.x版本驱动
+    username: root
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:com/baizhi/mapper/*.xml  # 指定mapper配置文件位置
+  type-aliases-package: com.baizhi.entity  #指定实体类的包名 默认别名 ：类名 类名首字母小写
