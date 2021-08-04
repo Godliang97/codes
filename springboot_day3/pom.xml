@@ -52,6 +52,14 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.1.4</version>
         </dependency>
+
+        <!--热部署依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!--该依赖是否可以传递 true 不能传递 只能当期项目可用-->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
