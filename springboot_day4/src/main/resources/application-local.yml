@@ -1,0 +1,7 @@
+# 指定文件上传位置
+file:
+  upload:
+    dir: C:\localfile
+
+
+
