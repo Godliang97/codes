@@ -1,0 +1,26 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /springboot_day6
+    jsp:
+      init-parameters:
+        development: true
+
+#配置视图前后缀
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+
+#配置日志
+logging:
+  pattern:
+    level: info
+    com.baizhi: debug  #配置指定包的日志级别
+
+#配置文件下载的位置
+file:
+  download:
+    dir: D:\JavaProjects\ssm\codes\springboot_day6\download  #指定下载目录测试环境
+#    dir: /home/download  生产环境
