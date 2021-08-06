@@ -6,6 +6,8 @@
     <artifactId>springboot_day6</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot_day6</name>
+    <!--指定war包部署-->
+    <packaging>war</packaging>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -32,6 +34,21 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--tomcat解析jsp-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <!--provided当前idea环境可用，打包的时候不参与打包-->
+            <scope>provided</scope>
+        </dependency>
+
+        <!--去掉内嵌的tomcat依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -50,6 +67,14 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
@@ -63,7 +88,11 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.baizhi.SpringbootDay6Application</mainClass>
+                    <fork>true</fork>
+                    <!--增加jvm参数-->
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                    <!--指定入口类-->
+                    <mainClass>com.baizhi.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>

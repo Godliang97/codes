@@ -1,7 +1,7 @@
 server:
-  port: 8989
+  port: 8989  #一旦使用外部服务器进行部署，这个端口失效
   servlet:
-    context-path: /springboot_day6
+    context-path: /springboot_day6  #一旦使用外部服务器部署，这个项目名失效
     jsp:
       init-parameters:
         development: true
