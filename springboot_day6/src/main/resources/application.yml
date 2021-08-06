@@ -15,8 +15,8 @@ spring:
 
 #配置日志
 logging:
-  pattern:
-    level: info
+  level:
+    root: info
     com.baizhi: debug  #配置指定包的日志级别
 
 #配置文件下载的位置
